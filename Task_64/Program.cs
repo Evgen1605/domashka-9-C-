@@ -10,22 +10,16 @@ Clear();
 Write("Введите N: ");
 int n = int.Parse(ReadLine()!);
 
-// for (int i = 1; i <= n; i++)
-// {
-//   Write($"{i} ");
-// }
-// WriteLine();
-
-WriteLine(PrintNumbers(n));
+WriteLine($"N = {n} -> {PrintNumbers(n)}");
 
 string PrintNumbers(int end)// функция выдаёт натуральные числа в промежутке от 1 до заданное пользователем(n) например 4
 {
   if (end == 1)// проверяет пока конечное число (заданное пользователем) не приравняется 1
   {
-    WriteLine(end);
+    // WriteLine(end);
     return end.ToString();// возвращает строку начиная с 1
   }
-  string s = end.ToString() + " " + PrintNumbers(end - 1);
-  WriteLine(s);// выводит в консоль
+  string s = end.ToString() + ", " + PrintNumbers(end - 1);
+  // WriteLine(s);// выводит в консоль
   return s;// возвращает строку s 
 }
